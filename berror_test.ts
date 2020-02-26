@@ -26,3 +26,11 @@ Deno.test(function metadata() {
   const e2 = new BError("A", e1, { foo: "baz", name: "Deno" });
   assertEquals(e2.metadata, { foo: "baz", age: 42, name: "Deno" });
 });
+
+Deno.test(function nonObject() {
+  const e = new BError("A", ({ foo: "bar", age: 42 }) as any);
+  assertEquals(
+    e.message,
+    `A: non-error object thrown: {"foo":"bar","age":42}`
+  );
+});
