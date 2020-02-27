@@ -30,7 +30,7 @@ try {
 ```
 The metadata is kept in the chain,
 the final error will contain all the metadata of the errors that caused it.
-If two errors send the same metadata, the last one will override the first one.
+If two errors send the same metadata property, the last one will override the first one.
 
 ## Logging
 BError comes with a `log` function that makes it easy and short to log the error.
@@ -66,4 +66,4 @@ export class MyError extends BError {
     }
   }
 }
-```
+``` 
