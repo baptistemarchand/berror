@@ -1,6 +1,6 @@
 # BError - Better Error Handling
 
-Inspired by [VError](https://github.com/joyent/node-verror) and written in TypeScript.
+Inspired by [VError](https://github.com/joyent/node-verror) and written in TypeScript. Compatible with deno. 
 
 A `BError` is just like a regular `Error` with three added benefits:
 
