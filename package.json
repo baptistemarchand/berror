@@ -1,6 +1,6 @@
 {
   "name": "berror",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Simple error handling",
   "main": "build/berror.js",
   "types": "build/berror.d.ts",
