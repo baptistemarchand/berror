@@ -8,7 +8,8 @@
   "author": "Baptiste Marchand <baptistemarchand42@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "test": "deno test"
   },
   "prepare": "yarn build",
   "files": [

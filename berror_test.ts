@@ -1,4 +1,4 @@
-import { BError } from "../berror.ts";
+import { BError } from "./berror.ts";
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import * as log from "https://deno.land/std/log/mod.ts";
 
