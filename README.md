@@ -32,6 +32,9 @@ The metadata is kept in the chain,
 the final error will contain all the metadata of the errors that caused it.
 If two errors send the same metadata property, the last one will override the first one.
 
+If you want to send metadata but you don't have an error that you just caught you can
+pass `undefined` or `null` to the constructor: `new BError("Oops", undefined, {foo: 42})`
+
 ## Logging
 BError comes with a `log` function that makes it easy and short to log the error.
 ```typescript
