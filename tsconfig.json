@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "declaration": true,
+        "outDir": "./build",
+        "target": "es2018",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "lib": [
+          "esnext",
+          "dom"
+        ],
+        "strict": true,
+    },
+    "include": [
+        "berror.ts",
+    ],
+  }

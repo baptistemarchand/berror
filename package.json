@@ -1,0 +1,20 @@
+{
+  "name": "berror",
+  "version": "1.0.0",
+  "description": "Simple error handling",
+  "main": "build/berror.js",
+  "types": "build/berror.d.ts",
+  "repository": "git@github.com:baptistemarchand/berror.git",
+  "author": "Baptiste Marchand <baptistemarchand42@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc"
+  },
+  "prepare": "yarn build",
+  "files": [
+    "build"
+  ],
+  "devDependencies": {
+    "typescript": "^3.8.2"
+  }
+}
