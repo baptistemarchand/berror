@@ -59,6 +59,3 @@ await log.setup({
     }
   }
 });
-
-log.warning("couocu", 42);
-new BError("A", Error("B"), { foo: "bar", age: 42 }).log();
