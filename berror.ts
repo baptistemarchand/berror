@@ -18,6 +18,12 @@ export class BError extends Error {
   }
 
   public log(...args: unknown[]) {
-    console.error(this.message, this.metadata)
+    const noMetadata = !this.metadata || Object.entries(this.metadata).length === 0
+
+    if (noMetadata) {
+      console.error(this.message)
+    } else {
+      console.error(this.message, this.metadata)
+    }
   }
 }
