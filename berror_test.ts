@@ -1,6 +1,5 @@
 import { BError } from "./berror.ts";
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
-import * as log from "https://deno.land/std/log/mod.ts";
 
 Deno.test(function onlyMesesage() {
   const e = new BError("A");
@@ -34,28 +33,4 @@ Deno.test(function nonObject() {
     e.message,
     `A: non-error object thrown: {"foo":"bar","age":42}`
   );
-});
-
-await log.setup({
-  handlers: {
-    console: new log.handlers.ConsoleHandler("DEBUG", {
-      formatter: logRecord => {
-        let msg = logRecord.msg;
-
-        logRecord.args.forEach(arg => {
-          msg += ` ${JSON.stringify(arg)}`;
-        });
-
-        return msg;
-      }
-    })
-  },
-
-  loggers: {
-    // configure default logger available via short-hand methods above
-    default: {
-      level: "DEBUG",
-      handlers: ["console"]
-    }
-  }
 });
