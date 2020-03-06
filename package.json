@@ -1,6 +1,6 @@
 {
   "name": "berror",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Simple error handling",
   "main": "build/berror.js",
   "types": "build/berror.d.ts",
@@ -9,9 +9,9 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "test": "deno test"
+    "test": "deno test",
+    "prepare": "yarn build"
   },
-  "prepare": "yarn build",
   "files": [
     "build"
   ],
