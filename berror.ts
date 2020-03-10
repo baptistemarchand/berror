@@ -5,6 +5,9 @@ export class BError extends Error {
     public metadata?: Record<string, unknown>
   ) {
     super(msg)
+    // Workaround for https://github.com/Microsoft/TypeScript/wiki/Breaking-Changes#extending-built-ins-like-error-array-and-map-may-no-longer-work
+    Object.setPrototypeOf(this, BError.prototype)
+
     if (cause != undefined) {
       const subMessage = cause instanceof Error
         ? cause.message
