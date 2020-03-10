@@ -1,3 +1,8 @@
+![npm type definitions](https://img.shields.io/npm/types/berror)
+![npm](https://img.shields.io/npm/v/berror)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/baptistemarchand/berror)
+![Maintenance](https://img.shields.io/maintenance/yes/2020)
+
 # BError - Better Error Handling
 
 Inspired by [VError](https://github.com/joyent/node-verror) and written in TypeScript. Compatible with deno. 
