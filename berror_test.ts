@@ -1,5 +1,5 @@
 import { BError } from "./berror.ts";
-import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
+import { assertEquals, assertStringContains } from "https://deno.land/std/testing/asserts.ts";
 
 Deno.test("onlyMesesage", function () {
   const e = new BError("A");
@@ -33,4 +33,16 @@ Deno.test("nonObject", function () {
     e.message,
     `A: non-error object thrown: {"foo":"bar","age":42}`
   );
+});
+
+const a = () => {throw Error("original error")}
+const b = () => a()
+const c = () => {
+  try {b()} catch (e) { throw new BError('could not run b', e)}
+}
+
+Deno.test("has original stack", function () {
+  try {c()} catch (e) {
+    assertStringContains(e.stack, "original error");
+  }
 });

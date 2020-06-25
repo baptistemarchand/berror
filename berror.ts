@@ -1,4 +1,6 @@
 export class BError extends Error {
+  private firstStack: string | undefined = undefined
+
   constructor(
     msg: string,
     cause?: Error,
@@ -13,7 +15,14 @@ export class BError extends Error {
         ? cause.message
         : `non-error object thrown: ${JSON.stringify(cause)}`
       this.message = `${this.message}: ${subMessage}`
+
+      if (!this.firstStack) {
+        this.firstStack = cause.stack
+      }
     }
+
+    this.stack = this.firstStack
+
     this.metadata = {
       ...(cause instanceof BError ? cause.metadata : {}),
       ...metadata
