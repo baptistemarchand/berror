@@ -1,6 +1,11 @@
 export class BError extends Error {
   private firstStack: string | undefined = undefined
 
+  /**
+   * @param msg - A description of the error
+   * @param cause - If you are inside a `catch` block you can pass the caught error here
+   * @param metadata - An object containing any data that could be useful for debugging
+   */
   constructor(
     msg: string,
     cause?: Error,
