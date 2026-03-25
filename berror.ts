@@ -1,6 +1,4 @@
 export class BError extends Error {
-  private firstStack: string | undefined = undefined
-
   /**
    * @param msg - A description of the error
    * @param cause - If you are inside a `catch` block you can pass the caught error here
@@ -20,13 +18,9 @@ export class BError extends Error {
         ? cause.message
         : `non-error object thrown: ${JSON.stringify(cause)}`
       this.message = `${this.message}: ${subMessage}`
-
-      if (!this.firstStack) {
-        this.firstStack = cause.stack
-      }
     }
 
-    this.stack = this.firstStack
+    this.stack = cause?.stack ?? this.stack
 
     this.metadata = {
       ...(cause instanceof BError ? cause.metadata : {}),
